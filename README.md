@@ -42,6 +42,8 @@ A **PPO (Proximal Policy Optimization)** agent performs sequential dispatching a
 
 The interactive demo reuses the deck coordinates, equipment locations, and MATLAB towing trajectories from this project. It presents the complete operation 1–8 sequence for one aircraft, from tractor approach and towing to catapult launch and sustained climb.
 
+[![航空母舰三维交互演示 · Interactive carrier 3D demo](assets/11_carrier_3d_demo.png)](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
+
 ▶ [**打开 3D Demo · Open interactive demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
 
 接口 · API: [`GET /api/demo`](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo)

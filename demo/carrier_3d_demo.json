@@ -3,6 +3,7 @@
   "demo_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/",
   "api_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo",
   "capture_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/?capture=sortie",
+  "screenshot": "assets/11_carrier_3d_demo.png",
   "source_repository": "wgy577/sortie-carrier-3d-demo",
   "source_repository_visibility": "private",
   "author": "Guangyu Wu (WGY / Little Rain)",
