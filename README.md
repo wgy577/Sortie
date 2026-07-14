@@ -12,7 +12,7 @@ Carrier-aircraft dispatching, reinforcement learning, and schedule visualization
 ![Method](https://img.shields.io/badge/Method-PPO-2F6B5F?style=flat-square)
 ![Objective](https://img.shields.io/badge/Objective-Makespan-C47C3C?style=flat-square)
 
-[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**视频中心 · Videos**](https://github.com/wgy577/sortie-videos)
+[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**3D 交互演示 · 3D Demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/) · [**视频中心 · Videos**](https://github.com/wgy577/sortie-videos)
 
 </div>
 
@@ -33,6 +33,21 @@ Sortie formulates carrier-aircraft launch scheduling as a **complex-constrained 
 项目使用基于 **PPO（Proximal Policy Optimization，近端策略优化）** 的智能体进行序贯派工与资源分配，以缩短整体出动完工时间（makespan），同时保持调度可行且资源无冲突。
 
 A **PPO (Proximal Policy Optimization)** agent performs sequential dispatching and resource assignment. The objective is to reduce the overall sortie makespan while maintaining a feasible, conflict-free schedule.
+
+## 航空母舰三维交互演示 · Interactive carrier 3D demo
+
+三维 Demo 直接复用项目中的甲板坐标、设备位置以及 MATLAB 牵引轨迹，以完整航母、
+舰载机与牵引车模型展示单架舰载机工序 1–8，包括牵引车接近、挂接、牵引、进入弹射器、
+弹射离舰和持续攀升。页面支持绕航母观察、环境亮度调整、完整流程和单独出动演示。
+
+The interactive demo reuses the deck coordinates, equipment locations, and MATLAB towing trajectories from this project. It presents the complete operation 1–8 sequence for one aircraft, from tractor approach and towing to catapult launch and sustained climb.
+
+▶ [**打开 3D Demo · Open interactive demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
+
+接口 · API: [`GET /api/demo`](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo)
+
+完整 Demo 源码保存在独立的 GitHub 私有仓库；本公开仓库仅提供成果介绍、访问入口和接口信息。<br>
+The complete demo source is maintained in a separate private GitHub repository; this public repository contains only the research showcase and access points.
 
 ## 调度模型 · Scheduling model
 

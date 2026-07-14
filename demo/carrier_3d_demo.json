@@ -1,0 +1,10 @@
+{
+  "name": "航空母舰三维演示",
+  "demo_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/",
+  "api_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo",
+  "capture_url": "https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/?capture=sortie",
+  "source_repository": "wgy577/sortie-carrier-3d-demo",
+  "source_repository_visibility": "private",
+  "author": "Guangyu Wu (WGY / Little Rain)",
+  "copyright": "Copyright © 2026 Guangyu Wu. All Rights Reserved."
+}
