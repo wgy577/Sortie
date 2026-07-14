@@ -20,9 +20,9 @@ Carrier-aircraft dispatching, reinforcement learning, and schedule visualization
 
 ## 项目说明 · Project statement
 
-本项目由 **大连理工大学吴光宇与教师团队** 完成，作为相关论文研究工作的可视化展示 Demo，用于呈现复杂约束 HFSP 舰载机出动调度的建模、训练与调度结果。
+本项目由 **大连理工大学吴光宇在导师与师兄指导下完成**，作为相关论文研究工作的可视化展示 Demo，用于呈现复杂约束 HFSP 舰载机出动调度的建模、训练与调度结果。
 
-This project was developed by **Guangyu Wu and the faculty research team at Dalian University of Technology** as a visual demonstration for the associated research paper. It presents the modeling, training process, and scheduling results of complex-constrained HFSP for carrier-aircraft sortie operations.
+This project was developed by **Guangyu Wu at Dalian University of Technology under the guidance of his academic advisor and senior lab colleagues** as a visual demonstration for the associated research paper. It presents the modeling, training process, and scheduling results of complex-constrained HFSP for carrier-aircraft sortie operations.
 
 ## 项目概览 · Overview
 
@@ -125,5 +125,5 @@ Every online video below contains a slow-moving in-frame watermark and a fixed l
 ---
 
 <div align="center">
-大连理工大学吴光宇与教师团队 · Guangyu Wu and the faculty research team at Dalian University of Technology
+大连理工大学吴光宇（导师与师兄指导） · Guangyu Wu at Dalian University of Technology, under the guidance of his academic advisor and senior lab colleagues
 </div>
