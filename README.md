@@ -40,11 +40,11 @@ A **PPO (Proximal Policy Optimization)** agent performs sequential dispatching a
 舰载机与牵引车模型展示单架舰载机工序 1–8，包括牵引车接近、挂接、牵引、进入弹射器、
 弹射离舰和持续攀升。页面支持绕航母观察、环境亮度调整、完整流程和单独出动演示。
 
-“甲板机”按钮可选择 6、10、16、24 或 31 架静态舰载机；默认 10 架以降低笔记本 GPU 负载，31 架用于展示完整停机布局。
+“甲板机”按钮可选择 6、10、16、24 或 31 架静态舰载机；为了控制 GPU 负载并防止设备发热，默认为 10 架，31 架用于展示完整停机布局。展示结束后请务必点击“结束并停止”或关闭 Demo 标签页，以停止后台三维渲染并释放 WebGL 资源。
 
 The interactive demo reuses the deck coordinates, equipment locations, and MATLAB towing trajectories from this project. It presents the complete operation 1–8 sequence for one aircraft, from tractor approach and towing to catapult launch and sustained climb.
 
-The deck-aircraft selector provides 6, 10, 16, 24, or all 31 static aircraft. Ten is the default low-power setting; 31 displays the complete parking layout.
+The deck-aircraft selector provides 6, 10, 16, 24, or all 31 static aircraft. Ten is the default heat-management setting; 31 displays the complete parking layout. After viewing, always select **End and Stop** or close the Demo tab to stop background 3D rendering and release WebGL resources.
 
 [![航空母舰三维交互演示 · Interactive carrier 3D demo](assets/11_carrier_3d_demo.png)](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
 
