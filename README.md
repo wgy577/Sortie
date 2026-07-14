@@ -1,101 +1,124 @@
-# Sortie — Carrier Aircraft Scheduling Visualization
+# Sortie | 舰载机调度可视化
 
-Based on **FJSP (Flexible Job Shop Scheduling)**, studying the dispatching problem of carrier-based aircraft launching from aircraft carriers.
+基于 **FJSP（柔性作业车间调度）** 研究舰载机从航空母舰上出动调度的可视化。
 
-The core question: **Multiple aircraft, multiple catapults, various support equipment — how to schedule them so all aircraft launch in the shortest time without conflict?**
+核心问题：**多架舰载机、多个弹射器、各种保障设备——如何调度让所有飞机在最短时间内无冲突地出动？**
 
-We use **PPO (Proximal Policy Optimization)** to train an agent that learns to make these scheduling decisions, and visualize the complete animation below.
-
----
-
-## 1. Training Process
-
-First, look at how the algorithm learns.
-
-### ① Training Curve
-
-PPO training reward curve. The vertical axis represents the score obtained per scheduling episode, and the horizontal axis is the training steps. As training progresses, the reward gradually increases and converges — meaning the agent is learning to schedule more efficiently, wasting less time on conflicts and idle waits.
-
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/1_training_curve.mp4" width="800" controls></video>
-
-### ② Training Episode → Gantt Demo
-
-A single training episode compressed into a Gantt chart. Each row is an aircraft, each colored block is an operation (taxi to catapult, launch, etc.). You can see how the agent arranges the sequence of operations on the time axis and which aircraft are being served by which catapults at any given moment.
-
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/2_training_gantt.mp4" width="800" controls></video>
+我们用 **PPO（近端策略优化）** 训练一个 Agent 来学习做调度决策，下文将完整展示过程。
 
 ---
 
-## 2. Small-scale Demos: Understanding How Scheduling Works
+## 一、训练过程 — Training
 
-Before showing the full-scale scenario, let's start with the simplest cases to understand "what is carrier aircraft scheduling."
+### ① 训练曲线 — Training Curve
 
-### ③ Single Aircraft Sortie
+PPO 训练 reward 曲线。纵坐标是每次调度episode的得分，横坐标是训练步数。逐渐上升并收敛 —— 表示 Agent 学会了更高效的调度，减少了冲突和空闲等待。
 
-When there is only one aircraft: the tractor positions the aircraft → tractor tows it to the catapult → catapult launches → aircraft leaves. The baseline scenario. All complex coordination stems from this simple process.
+PPO training reward curve. Vertical: score per scheduling episode. Horizontal: training steps. Rising then converging agent is learning to schedule more efficiently.
 
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/3_sortie1.mp4" width="800" controls></video>
+<video src="videos/1_training_curve.mp4" width="800" controls></video>
 
-### ④ Two Aircraft Parallel
+🎬 [videos/1_training_curve.mp4](videos/1_training_curve.mp4)
 
-Two aircraft launch simultaneously. The problem begins: **limited catapults, limited tractors** — who goes first? How to avoid waiting? This is where the value of FJSP lies, and the agent must make optimal decisions for such resource competition.
+### ② 训练 Episosde -> 甘特图 — Episode to Gantt Chart
 
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/4_sortie2_parallel.mp4" width="800" controls></video>
+一个训练 episode 压缩成甘特图。每行是一架飞机，每个彩色块是一个工序（滑行到弹射位、弹射起飞等）。可以看到 Agent 如何安排飞机在各时间轴上的工序序列。
 
----
+A single training episode compressed into Gantt chart. Each row is an aircraft, each colored block is an operation. You can see how the agent arranges operation sequences.
 
-## 3. Full Scale: All 20 Aircraft
-
-This is the complete problem scale — 20 aircraft on the carrier deck, competing for 4 catapults and various support equipment. The complexity increases exponentially.
-
-### ⑤ 20 Aircraft Fast Demo
-
-Low-frame-rate fast version, for a quick overview of the entire dispatch rhythm. You can see how the agent batches aircraft and assigns them to different catapults, flowing continuously rather than one by one.
-
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/5_sortie20_fast.mp4" width="800" controls></video>
-
-### ⑥ 20 Aircraft HD (1.5× Speed)
-
-High-definition detail version (1.5× speed). Aircraft movements, towing trajectories, and the catapult launch moment are all clearly visible — you can see every aircraft being towed into position, the catapult firing, and the aircraft departing.
-
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/6_sortie20_hd_1.5x.mp4" width="800" controls></video>
-
-### ⑦ 20 Aircraft HD (1× Speed, Full Details)
-
-High-definition detail version at normal speed. For frame-by-frame observation of each aircraft's complete motion path and handoff timing.
-
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/8_sortie20_hd_1x.mp4" width="800" controls></video>
+<video src="videos/2_training_gantt.mp4" width="800" controls></video>
 
 ---
 
-## 4. Small Package Scenario: 8 Selected Aircraft
+## 二、小规模演示：理解调度原理 — Small-scale Demos
 
-Real task are often not launched with all aircraft, but a subset is selected. The following shows 8 aircraft being selected for a small package mission.
+### ③ 单架出动 — Single Aircraft Sortie
 
-### ⑧ 8 Aircraft Fast Demo
+只有一架舰载机：牵引车定位飞机 -> 拖车拉到弹射器 -> 弹射起飞 -> 飞机离场。基线场景，所有复杂协调都由此衍生。
 
-8 selected aircraft, low-frame-rate fast version. Quickly demonstrating the dispatch scenario when a small package launches.
+Only one aircraft: tractor positions aircraft -> tows to catapult -> launches -> leaves. Baseline scenario.
 
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/9_sortie8_fast.mp4" width="800" controls></video>
+<video src="videos/3_sortie1.mp4" width="800" controls></video>
 
-### ⑨ 8 Aircraft HD (Full Process)
+### ④ 双机并行 — Two Aircraft Parallel
 
-High-definition complete process version. From tractor positioning the aircraft, towing to the catapult, to launch — every step of every aircraft is rendered in detail.
+两架飞机同时出动。问题出现了：弹射器有限、牵引车有限 —— 谁先走？如何避免等待？FJSP 的价值就在这里。
 
-<video src="https://raw.githubusercontent.com/wgy577/Sortie/main/videos/10_sortie8_hd.mp4" width="800" controls></video>
+Two aircraft launch simultaneously. Limited catapults, limited tractors who goes first? FJSP's value appears here.
+
+<video src="videos/4_sortie2_parallel.mp4" width="800" controls></video>
+
+## 三、全规模：20架飞机 — Full Scale: 20 Aircraft
+
+这是完整的问题规模 —— 20架飞机竞争 4 个弹射器和各种保障设备。复杂度指数级上升。
+
+The full problem — 20 aircraft competing for 4 catapults and support equipment. Exponential complexity.
+
+### ⑤ 20架快速演示 — 20 Aircraft Fast Demo
+
+低帧率快速版，看整体调度节奏。可以看到 Agent 如何把飞机分批并分配到不同弹射位，形成流水线。
+
+Low-frame-rate fast version for overall dispatch rhythm. See how agent batches aircraft into different catapults.
+
+<video src="videos/5_sortie20_fast.mp4" width="800" controls></video>
+
+### ⑥ 20架高清 1.5x — 20 Aircraft HD 1.5x
+
+高清细节版（1.5倍速）。飞机运动、拖曳轨迹、弹射起飞瞬间清晰可见。
+
+HD detail version (1.5x speed). Aircraft movements, towing trajectories, launch moments clearly visible.
+
+<video src="videos/6_sortie20_hd_1.5x.mp4" width="800" controls></video>
+
+### ⑦ 20架高清 1x — 20 Aircraft HD 1x
+
+高清细节版（正常速度）。可以逐帧观看每架飞机的完整运动路径。
+
+HD detail version (normal speed). Watch each aircraft's complete motion path frame by frame.
+
+<video src="videos/8_sortie20_hd_1x.mp4" width="800" controls></video>
+
+## 四、小编队场景：8架飞机 — Small Package: 8 Aircraft
+
+实际任务并非全部出动，常选择一个子集出击。下面展示8架飞机小编队任务。
+
+Real missions often deploy a subset. Below shows 8 selected aircraft in small package.
+
+### ⑧ 8架快速演示 — 8 Aircraft Fast Demo
+
+8架被选中的舰载机，低帧率快速版，快速展示小编队出动调度场景。
+
+8 selected aircraft, fast version showing small package dispatch scenario.
+
+<video src="videos/9_sortie8_fast.mp4" width="800" controls></video>
+
+### ⑨ 8架高清完整版 — 8 Aircraft HD Complete
+
+高清完整版。从牵引车定位到出动全过程，每架飞机每个步骤都精细渲染。
+
+HD complete version. From tractor positioning to launch, every step rendered in detail.
+
+<video src="videos/10_sortie8_hd.mp4" width="800" controls></video>
 
 ---
 
-## File Overview
+*注：视频截图（封面图）将在仓库公开后补充添加。*
 
-| # | File | Description |
-|---|------|-------------|
-| 1 | `videos/1_training_curve.mp4` | PPO training reward curve |
-| 2 | `videos/2_training_gantt.mp4` | Training episode → Gantt chart |
-| 3 | `videos/3_sortie1.mp4` | Single aircraft sortie (baseline) |
-| 4 | `videos/4_sortie2_parallel.mp4` | Two aircraft parallel |
-| 5 | `videos/5_sortie20_fast.mp4` | 20 aircraft fast demo |
-| 6 | `videos/6_sortie20_hd_1.5x.mp4` | 20 aircraft HD (1.5× speed) |
-| 7 | `videos/8_sortie20_hd_1x.mp4` | 20 aircraft HD (normal speed) |
-| 8 | `videos/9_sortie8_fast.mp4` | Aircraft fast demo |
-| 9 | `videos/10_sortie8_hd.mp4` | Aircraft HD complete process |
+*Screenshots will be added after repo goes public.*
+
+---
+
+README 视频总览：
+
+| # | File | 文件 | Description |
+|---|------|------|-------------|
+| 1 | `videos/1_training_curve.mp4` | 训练曲线 | PPO 训练 reward 曲线 |
+| 2 | `videos/2_training_gantt.mp4` | 训练甘特 | 训练 Episode -> 甘特图 |
+| 3 | `videos/3_sortie1.mp4` | 单架出动 | 单架出动基线场景 |
+| 4 | `videos/4_sortie2_parallel.mp4` | 双机出动 | 双机并行调度 |
+| 5 | `videos/5_sortie20_fast.mp4` | 20架出动（调度） | 20架飞机调度快速演示 |
+| 6 | `videos/6_sortie20_hd_1.5x.mp4` | 20架出动（高质量 1.5x） | 20架出动高清 1.5x |
+| 7 | `videos/7_sortie20_hd_1.5x_alt.mp4` | 20架出动（高质量 1.5x 备选） | 同⑥ 备选 |
+| 8 | `videos/8_sortie20_hd_1x.mp4` | 20架出动（高质量 原速） | 20架出动高清原速 |
+| 9 | `videos/9_sortie8_fast.mp4` | 8架出动（调度） | 8架小编队快速演示 |
+| 10 | `videos/10_sortie8_hd.mp4` | 8架出动（高质量完整版） | 8架出动高清完整过程 |
