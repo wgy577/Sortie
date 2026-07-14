@@ -12,7 +12,7 @@ Carrier-aircraft dispatching, reinforcement learning, and schedule visualization
 ![Method](https://img.shields.io/badge/Method-PPO-2F6B5F?style=flat-square)
 ![Objective](https://img.shields.io/badge/Objective-Makespan-C47C3C?style=flat-square)
 
-[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**视频播放与下载 · Videos**](https://github.com/wgy577/sortie-videos)
+[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**视频中心 · Videos**](https://github.com/wgy577/sortie-videos)
 
 </div>
 
@@ -52,17 +52,17 @@ The learning curve tracks makespan throughout training. The raw series and smoot
 
 [![PPO 训练曲线 · PPO training curve](assets/1_training_curve.png)](https://wgy577.github.io/sortie-videos/videos/1_training_curve.mp4)
 
-▶ [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/1_training_curve.mp4) · [下载 MP4 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/1_training_curve.mp4)
+▶ [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/1_training_curve.mp4)
 
 ### 异步训练与甘特图演化 · Asynchronous episodes and Gantt evolution
 
-不同舰载机数量的并行环境会异步结束，其轨迹持续汇入 rollout buffer；甘特图同步展示资源占用、决策进度与任务完成状态。
+视频首先展示 PPO 网络的训练过程：不同舰载机数量的并行环境异步运行并结束，采集到的轨迹持续汇入 rollout buffer。训练完成后，使用训练后的网络依次输出选机与资源分配决策，并将最终调度结果呈现为甘特图，从而直观展示各阶段的资源占用、作业顺序与完成时间。
 
-Parallel environments with different aircraft counts terminate asynchronously while their trajectories are collected in the rollout buffer. The Gantt view simultaneously exposes resource occupation, decision progress, and completion status.
+The video first presents PPO network training: parallel environments with different aircraft counts run and terminate asynchronously while their trajectories are collected in the rollout buffer. After training, the trained network sequentially produces aircraft-selection and resource-assignment decisions, and the resulting schedule is rendered as a Gantt chart to visualize resource occupation, operation order, and completion time.
 
 [![训练甘特图演化 · Training Gantt evolution](assets/2_training_gantt.png)](https://wgy577.github.io/sortie-videos/videos/2_training_gantt.mp4)
 
-▶ [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/2_training_gantt.mp4) · [下载 MP4 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/2_training_gantt.mp4)
+▶ [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/2_training_gantt.mp4)
 
 ## 调度演示 · Scheduling demonstrations
 
@@ -72,7 +72,7 @@ Parallel environments with different aircraft counts terminate asynchronously wh
 |:--:|:--:|
 | [![单机出动 · Single aircraft](assets/3_sortie1.png)](https://wgy577.github.io/sortie-videos/videos/3_sortie1.mp4) | [![双机并行 · Two aircraft](assets/4_sortie2_parallel.png)](https://wgy577.github.io/sortie-videos/videos/4_sortie2_parallel.mp4) |
 | 无机间竞争的顺序作业<br>Ordered operations without inter-aircraft competition | 共享资源引入排序与协同决策<br>Shared resources introduce sequencing and coordination decisions |
-| [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/3_sortie1.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/3_sortie1.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/4_sortie2_parallel.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/4_sortie2_parallel.mp4) |
+| [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/3_sortie1.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/4_sortie2_parallel.mp4) |
 
 ### 全规模场景：20 架舰载机 · Full-scale scenario: 20 aircraft
 
@@ -83,9 +83,9 @@ The 20-aircraft case exposes the complete multi-stage coordination problem. Airc
 | 快速总览 · Fast overview | 高清细节 1.5× · HD 1.5× | 高清原速 · HD 1× |
 |:--:|:--:|:--:|
 | [![20 机快速演示 · 20 aircraft fast](assets/5_sortie20_fast.png)](https://wgy577.github.io/sortie-videos/videos/5_sortie20_fast.mp4) | [![20 机高清演示 · 20 aircraft HD](assets/6_sortie20_hd_1.5x.png)](https://wgy577.github.io/sortie-videos/videos/6_sortie20_hd_1.5x.mp4) | [![20 机高清原速 · 20 aircraft normal speed](assets/8_sortie20_hd_1x.png)](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) |
-| [播放 · Play](https://wgy577.github.io/sortie-videos/videos/5_sortie20_fast.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/5_sortie20_fast.mp4) | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/6_sortie20_hd_1.5x.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/6_sortie20_hd_1.5x.mp4) | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/8_sortie20_hd_1x.mp4) |
+| [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/5_sortie20_fast.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/6_sortie20_hd_1.5x.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) |
 
-备选高清渲染 · Alternative HD rendering: [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/7_sortie20_hd_1.5x_alt.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/7_sortie20_hd_1.5x_alt.mp4)
+备选高清渲染 · Alternative HD rendering: [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/7_sortie20_hd_1.5x_alt.mp4)
 
 ### 任务编队：8 架舰载机 · Mission package: 8 aircraft
 
@@ -96,25 +96,25 @@ The selected-aircraft scenario demonstrates scheduling for a partial mission pac
 | 快速总览 · Fast overview | 高清完整过程 · HD complete process |
 |:--:|:--:|
 | [![8 机快速演示 · 8 aircraft fast](assets/9_sortie8_fast.png)](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) | [![8 机高清演示 · 8 aircraft HD](assets/10_sortie8_hd.png)](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) |
-| [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/9_sortie8_fast.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) · [下载 · Download](https://github.com/wgy577/sortie-videos/blob/main/videos/10_sortie8_hd.mp4) |
+| [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) | [在线播放 · Play](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) |
 
 ## 视频链接汇总 · Video index
 
-下列可下载视频均带有画面内缓慢移动水印与右下角固定署名，并在两个仓库中保持一致。<br>
-Every downloadable video below contains a slow-moving in-frame watermark and a fixed lower-right signature. Identical protected copies are maintained in both repositories.
+下列在线视频均带有画面内缓慢移动水印与右下角固定署名。<br>
+Every online video below contains a slow-moving in-frame watermark and a fixed lower-right signature.
 
-| # | 场景 · Scenario | 在线播放 · Play | 下载 · Download |
-|--:|:--|:--:|:--:|
-| 01 | PPO 训练曲线 · PPO training curve | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/1_training_curve.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/1_training_curve.mp4) |
-| 02 | 异步训练与甘特图演化 · Asynchronous training and Gantt evolution | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/2_training_gantt.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/2_training_gantt.mp4) |
-| 03 | 单机出动基准 · Single-aircraft baseline | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/3_sortie1.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/3_sortie1.mp4) |
-| 04 | 双机并行调度 · Two-aircraft parallel dispatch | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/4_sortie2_parallel.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/4_sortie2_parallel.mp4) |
-| 05 | 20 机快速总览 · 20-aircraft fast overview | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/5_sortie20_fast.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/5_sortie20_fast.mp4) |
-| 06 | 20 机高清 1.5× · 20-aircraft HD 1.5× | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/6_sortie20_hd_1.5x.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/6_sortie20_hd_1.5x.mp4) |
-| 07 | 20 机高清 1.5× 备选 · 20-aircraft HD 1.5× alternate | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/7_sortie20_hd_1.5x_alt.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/7_sortie20_hd_1.5x_alt.mp4) |
-| 08 | 20 机高清原速 · 20-aircraft HD normal speed | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/8_sortie20_hd_1x.mp4) |
-| 09 | 8 机快速总览 · 8-aircraft fast overview | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/9_sortie8_fast.mp4) |
-| 10 | 8 机高清完整过程 · 8-aircraft HD complete process | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) | [MP4](https://github.com/wgy577/sortie-videos/blob/main/videos/10_sortie8_hd.mp4) |
+| # | 场景 · Scenario | 在线播放 · Play |
+|--:|:--|:--:|
+| 01 | PPO 训练曲线 · PPO training curve | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/1_training_curve.mp4) |
+| 02 | 异步训练与甘特图演化 · Asynchronous training and Gantt evolution | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/2_training_gantt.mp4) |
+| 03 | 单机出动基准 · Single-aircraft baseline | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/3_sortie1.mp4) |
+| 04 | 双机并行调度 · Two-aircraft parallel dispatch | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/4_sortie2_parallel.mp4) |
+| 05 | 20 机快速总览 · 20-aircraft fast overview | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/5_sortie20_fast.mp4) |
+| 06 | 20 机高清 1.5× · 20-aircraft HD 1.5× | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/6_sortie20_hd_1.5x.mp4) |
+| 07 | 20 机高清 1.5× 备选 · 20-aircraft HD 1.5× alternate | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/7_sortie20_hd_1.5x_alt.mp4) |
+| 08 | 20 机高清原速 · 20-aircraft HD normal speed | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) |
+| 09 | 8 机快速总览 · 8-aircraft fast overview | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) |
+| 10 | 8 机高清完整过程 · 8-aircraft HD complete process | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) |
 
 ---
 
