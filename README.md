@@ -37,16 +37,19 @@ A **PPO (Proximal Policy Optimization)** agent performs sequential dispatching a
 ## 航空母舰三维交互演示 · Interactive carrier 3D demo
 
 三维 Demo 直接复用项目中的甲板坐标、设备位置以及 MATLAB 牵引轨迹，以完整航母、
-舰载机与牵引车模型展示单架舰载机工序 1–8，包括牵引车接近、挂接、牵引、进入弹射器、
-弹射离舰和持续攀升。页面支持绕航母观察、环境亮度调整、完整流程和单独出动演示。
+舰载机与牵引车模型提供两种演示：单架舰载机工序 1–8，以及二维 PPO 策略 case 23 的
+20 架舰载机真实轨迹协同调度。20 架模式严格保持牵引车、准备位和弹射器映射；首次出车
+读取 `initialtraject`，后续从准备位再次出车读取 `trajectory`，牵引阶段读取
+`systemtraject`。页面支持绕航母观察、环境亮度调整及阴天/黄昏环境切换；离舰飞机持续
+平滑远距离攀升，镜头始终以航母为焦点。
 
 “甲板机”按钮可选择 6、10、16、24 或 31 架静态舰载机；为了控制 GPU 负载并防止设备发热，默认为 10 架，31 架用于展示完整停机布局。展示结束后请务必点击“结束并停止”或关闭 Demo 标签页，以停止后台三维渲染并释放 WebGL 资源。
 
-The interactive demo reuses the deck coordinates, equipment locations, and MATLAB towing trajectories from this project. It presents the complete operation 1–8 sequence for one aircraft, from tractor approach and towing to catapult launch and sustained climb.
+The interactive demo reuses the deck coordinates, equipment locations, and MATLAB towing trajectories from this project. It supports both the complete operation 1–8 sequence for one aircraft and the actual 20-aircraft PPO case-23 schedule. Aircraft continue a smooth long-range climb after launch while the camera remains focused on the carrier.
 
 The deck-aircraft selector provides 6, 10, 16, 24, or all 31 static aircraft. Ten is the default heat-management setting; 31 displays the complete parking layout. After viewing, always select **End and Stop** or close the Demo tab to stop background 3D rendering and release WebGL resources.
 
-[![航空母舰三维交互演示 · Interactive carrier 3D demo](assets/11_carrier_3d_demo.png)](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
+[![终版：黄昏环境下的 20 架舰载机协同调度 · Final 20-aircraft dusk dispatch](assets/11_carrier_3d_demo.png)](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
 
 ▶ [**打开 3D Demo · Open interactive demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
 
