@@ -12,7 +12,7 @@ Carrier-aircraft dispatching, reinforcement learning, and schedule visualization
 ![Method](https://img.shields.io/badge/Method-PPO-2F6B5F?style=flat-square)
 ![Objective](https://img.shields.io/badge/Objective-Makespan-C47C3C?style=flat-square)
 
-[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**3D 交互演示 · 3D Demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/) · [**视频中心 · Videos**](https://github.com/wgy577/sortie-videos)
+[**项目仓库 · Project**](https://github.com/wgy577/Sortie) · [**3D 交互演示 · 3D Demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/) · [**Vibe Coding 演进记录**](https://github.com/wgy577/carrier-vibe-coding-journey) · [**视频中心 · Videos**](https://github.com/wgy577/sortie-videos)
 
 </div>
 
@@ -51,6 +51,12 @@ The deck-aircraft selector provides 6, 10, 16, 24, or all 31 static aircraft. Te
 ▶ [**打开 3D Demo · Open interactive demo**](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/)
 
 接口 · API: [`GET /api/demo`](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo)
+
+从最早的 Prompt-only 失败版本，到 GPT 与 Claude Code 在 Agent Harness 下逐步完成最终 Demo 的一日迭代过程，见独立作品集：
+[**Carrier Vibe Coding Journey（2026-07-14）**](https://github.com/wgy577/carrier-vibe-coding-journey)。其中包含可直接体验的 v1/v2 原始 Demo、未经美化的历史源码、Prompt 演进与最终版接口。
+
+The one-day progression from the earliest prompt-only failures to the final GPT–Claude Code workflow under an Agent Harness is documented in the standalone portfolio:
+[**Carrier Vibe Coding Journey (2026-07-14)**](https://github.com/wgy577/carrier-vibe-coding-journey), including live v1/v2 demos, untouched historical source snapshots, the prompt evolution, and the final public interface.
 
 完整 Demo 源码保存在独立的 GitHub 私有仓库；本公开仓库仅提供成果介绍、访问入口和接口信息。<br>
 The complete demo source is maintained in a separate private GitHub repository; this public repository contains only the research showcase and access points.
