@@ -57,10 +57,10 @@ The deck-aircraft selector provides 6, 10, 16, 24, or all 31 static aircraft. Te
 
 接口 · API: [`GET /api/demo`](https://wgy-carrier-operations-demo.wgy577-sortie.workers.dev/api/demo)
 
-从最早的 **LLM + Prompt** 失败结果，到 **Agent + Prompt** 原型，再到 Harness 控制下的最终 Demo，一日迭代过程见独立作品集：
+从最早的 **LLM + Prompt** 失败结果，到 **Agent + Prompt** 原型，再到 Harness 控制下的最终 Demo，完整项目演进见独立作品集：
 [**Carrier Vibe Coding Journey（2026-07-14）**](https://github.com/wgy577/carrier-vibe-coding-journey)。其中包含可直接体验的 v1/v2 原始 Demo、未经美化的历史源码、Prompt 演进与最终版接口。
 
-The one-day progression from early **LLM + Prompt** failures, through **Agent + Prompt** prototypes, to the final Harness-controlled Demo is documented in the standalone portfolio:
+The progression from early **LLM + Prompt** failures, through **Agent + Prompt** prototypes, to the final Harness-controlled Demo is documented in the standalone portfolio:
 [**Carrier Vibe Coding Journey (2026-07-14)**](https://github.com/wgy577/carrier-vibe-coding-journey), including live v1/v2 demos, untouched historical source snapshots, the prompt evolution, and the final public interface.
 
 完整 Demo 源码保存在独立的 GitHub 私有仓库；本公开仓库仅提供成果介绍、访问入口和接口信息。<br>
@@ -153,6 +153,12 @@ Every online video below contains a slow-moving in-frame watermark and a fixed l
 | 08 | 20 机高清原速 · 20-aircraft HD normal speed | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/8_sortie20_hd_1x.mp4) |
 | 09 | 8 机快速总览 · 8-aircraft fast overview | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/9_sortie8_fast.mp4) |
 | 10 | 8 机高清完整过程 · 8-aircraft HD complete process | [播放 · Play](https://wgy577.github.io/sortie-videos/videos/10_sortie8_hd.mp4) |
+
+## 数据、素材与用途声明 · Data, assets, and use
+
+本仓库中的调度实例、训练结果、轨迹和视频均用于科研仿真与论文成果展示，不代表真实装备性能、实际作业流程或安全结论。项目生成的图表与视频归作者所有；外部依赖、模型、纹理或其他第三方素材遵循各自来源页面和许可证，本仓库不授予超出原许可范围的再分发或商业使用权。
+
+The schedules, training results, trajectories, and videos in this repository are research simulations and paper demonstrations. They do not represent real equipment performance, operational procedures, or safety conclusions. Project-generated figures and videos remain the author's work; third-party dependencies and assets remain subject to their original licenses.
 
 ---
 
